@@ -1,0 +1,33 @@
+{
+  "name": "ripple-stick-to-bottom",
+  "version": "0.1.0",
+  "description": "Ripple/TSRX stick-to-bottom scroll primitives for streaming content.",
+  "type": "module",
+  "license": "MIT",
+  "author": "ethan-huo",
+  "homepage": "https://github.com/ethan-huo/ripple-stick-to-bottom#readme",
+  "repository": "https://github.com/ethan-huo/ripple-stick-to-bottom",
+  "bugs": {
+    "url": "https://github.com/ethan-huo/ripple-stick-to-bottom/issues"
+  },
+  "keywords": [
+    "ripple",
+    "tsrx",
+    "stick-to-bottom",
+    "scroll",
+    "streaming",
+    "chat"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/stick-to-bottom.tsrx",
+    "./controller": "./src/controller.ts",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "ripple": ">=0.3.0"
+  }
+}
