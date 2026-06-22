@@ -1,0 +1,17 @@
+
+      .ripple-stick-to-bottom.tsrx-54763bba {
+        height: 100%;
+        overflow: auto;
+        scrollbar-gutter: stable both-edges;
+        width: 100%;
+      }
+
+      .ripple-stick-to-bottom-content.tsrx-54763bba {
+        min-height: 100%;
+      }
+
+      .ripple-stick-to-bottom-spacer.tsrx-54763bba {
+        flex-shrink: 0;
+        height: var(--ripple-stick-to-bottom-inset);
+      }
+    
