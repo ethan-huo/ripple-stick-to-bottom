@@ -1,6 +1,6 @@
 {
   "name": "ripple-stick-to-bottom",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Ripple/TSRX stick-to-bottom scroll primitives for streaming content.",
   "type": "module",
   "license": "MIT",
@@ -18,23 +18,34 @@
     "streaming",
     "chat"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
-    ".": "./src/stick-to-bottom.tsrx",
-    "./controller": "./src/controller.ts",
+    ".": {
+      "types": "./dist/stick-to-bottom.d.ts",
+      "browser": "./dist/stick-to-bottom.client.js",
+      "worker": "./dist/stick-to-bottom.server.js",
+      "default": "./dist/stick-to-bottom.server.js"
+    },
+    "./controller": {
+      "types": "./dist/controller.d.ts",
+      "default": "./dist/controller.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "build": "tsc --noEmit"
+    "build": "bun scripts/build.ts && tsc src/controller.ts --declaration --emitDeclarationOnly --outDir dist --skipLibCheck --moduleResolution bundler --module esnext --target esnext && cp types/stick-to-bottom.d.ts dist/stick-to-bottom.d.ts",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "ripple": ">=0.3.0"
   },
   "devDependencies": {
+    "@tsrx/ripple": "^0.1.32",
     "ripple": "^0.3.84",
     "typescript": "^5.9.2"
   }

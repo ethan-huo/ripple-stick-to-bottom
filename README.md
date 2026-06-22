@@ -5,15 +5,17 @@ Stick-to-bottom scroll primitives for [Ripple](https://github.com/trueadm/ripple
 pinned to the bottom as content grows, and releases the pin the moment the user
 scrolls up.
 
-Distributed as source from GitHub version tags — the consumer's Ripple vite
-plugin compiles the `.tsrx`. There is no built `dist/` and no npm package.
+Distributed as compiled JS from GitHub version tags (no npm package). Each
+`.tsrx` is built to client + server variants via `@tsrx/ripple`; the
+`browser`/`worker` export conditions route them per environment, so it works as
+a normal dependency of a Ripple SSR app.
 
 ## Install
 
 Depend on a version tag:
 
 ```bash
-bun add github:ethan-huo/ripple-stick-to-bottom#v0.1.0
+bun add github:ethan-huo/ripple-stick-to-bottom#v0.2.0
 ```
 
 ## Usage
@@ -25,8 +27,8 @@ import { StickToBottomController } from "ripple-stick-to-bottom/controller"
 
 | Export | Module |
 | --- | --- |
-| `.` | `src/stick-to-bottom.tsrx` — the component |
-| `./controller` | `src/controller.ts` — imperative scroll controller |
+| `.` | the `StickToBottom` component + `createStickToBottom` |
+| `./controller` | imperative scroll controller |
 
 ## Peer dependencies
 

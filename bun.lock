@@ -5,6 +5,7 @@
     "": {
       "name": "ripple-stick-to-bottom",
       "devDependencies": {
+        "@tsrx/ripple": "^0.1.32",
         "ripple": "^0.3.84",
         "typescript": "^5.9.2",
       },
